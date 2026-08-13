@@ -1,0 +1,7 @@
+data/raw/*.rds
+data/processed/*.rds
+results/session_info.txt
+.Rhistory
+.RData
+.Rproj.user/
+

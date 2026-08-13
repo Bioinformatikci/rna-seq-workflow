@@ -1,0 +1,6 @@
+metric,value
+samples,8
+genes_before_filtering,63677
+genes_after_filtering,16139
+filter_rule,keep genes with count >= 10 in at least 4 samples
+contrast,treated vs untreated dexamethasone
