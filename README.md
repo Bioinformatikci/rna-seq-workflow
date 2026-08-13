@@ -1,8 +1,29 @@
-# rnaseq-report-template
+# RNA-seq Workflow
 
-Publication-ready RNA-seq differential expression workflow using the Bioconductor `airway` dataset.
+A reproducible RNA-seq analysis workflow demonstrating differential expression analysis, publication-ready visualizations, and structured result reporting.
 
-The project is designed as a clean proof-of-work repository for an end-to-end RNA-seq DEG service: raw count data, metadata, QC, DESeq2 analysis, PCA, heatmaps, volcano plot, DEG tables, and a short interpretation report.
+## What This Project Shows
+
+- RNA-seq differential expression workflow
+- PCA, heatmap, and volcano plot generation
+- Organized result tables and figures
+- Short analysis report structure
+- Reproducible scripting practice
+
+## Example Outputs
+
+- PCA plot: [`results/plots/pca.png`](results/plots/pca.png)
+- Sample distance heatmap: [`results/plots/sample_distance_heatmap.png`](results/plots/sample_distance_heatmap.png)
+- Top DEG heatmap: [`results/plots/top_deg_heatmap.png`](results/plots/top_deg_heatmap.png)
+- Volcano plot: [`results/plots/volcano.png`](results/plots/volcano.png)
+- Differential expression results table: [`results/tables/deg_results.csv`](results/tables/deg_results.csv)
+- Short analysis report: [`reports/summary_report.md`](reports/summary_report.md)
+
+![PCA plot](results/plots/pca.png)
+
+![Volcano plot](results/plots/volcano.png)
+
+The project is designed as a clean proof-of-work repository for an end-to-end RNA-seq DEG workflow: raw count data, metadata, QC, DESeq2 analysis, PCA, heatmaps, volcano plot, DEG tables, and a short interpretation report.
 
 ## Dataset
 
