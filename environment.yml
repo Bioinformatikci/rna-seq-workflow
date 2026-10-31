@@ -1,0 +1,20 @@
+name: rna-seq-workflow
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - r-base>=4.4
+  - r-biocmanager
+  - r-dplyr
+  - r-ggplot2
+  - r-ggrepel
+  - r-pheatmap
+  - r-rcolorbrewer
+  - r-readr
+  - r-tibble
+  - bioconductor-airway
+  - bioconductor-annotationdbi
+  - bioconductor-apeglm
+  - bioconductor-deseq2
+  - bioconductor-org.hs.eg.db
+  - bioconductor-summarizedexperiment

@@ -2,6 +2,29 @@
 
 A reproducible RNA-seq analysis workflow demonstrating differential expression analysis, publication-ready visualizations, and structured result reporting.
 
+| PCA | Volcano plot |
+| --- | --- |
+| ![PCA plot](results/plots/pca.png) | ![Volcano plot](results/plots/volcano.png) |
+
+| Sample distances | Top DEGs |
+| --- | --- |
+| ![Sample distance heatmap](results/plots/sample_distance_heatmap.png) | ![Top DEG heatmap](results/plots/top_deg_heatmap.png) |
+
+## Client-Style Deliverables
+
+This is the same structure a research team would receive for a focused comparison:
+
+| You get | Where to look |
+| --- | --- |
+| QC and filtering summary | [`results/tables/qc_summary.csv`](results/tables/qc_summary.csv) |
+| Full and significant DEG tables | [`results/tables/`](results/tables/) |
+| Normalized counts | [`results/tables/normalized_counts.csv`](results/tables/normalized_counts.csv) |
+| Figures as PNG and PDF | [`results/plots/`](results/plots/) |
+| Short interpretation report | [`reports/summary_report.md`](reports/summary_report.md) |
+| Scripts to rerun every step | [`scripts/`](scripts/) |
+
+In this example, 749 of 16,139 filtered genes passed the significance thresholds: 411 up and 338 down in treated samples.
+
 ## What This Project Shows
 
 - RNA-seq differential expression workflow
@@ -19,15 +42,11 @@ A reproducible RNA-seq analysis workflow demonstrating differential expression a
 - Differential expression results table: [`results/tables/deg_results.csv`](results/tables/deg_results.csv)
 - Short analysis report: [`reports/summary_report.md`](reports/summary_report.md)
 
-![PCA plot](results/plots/pca.png)
-
-![Volcano plot](results/plots/volcano.png)
-
 The project is designed as a clean proof-of-work repository for an end-to-end RNA-seq DEG workflow: raw count data, metadata, QC, DESeq2 analysis, PCA, heatmaps, volcano plot, DEG tables, and a short interpretation report.
 
 ## Dataset
 
-This template uses the Bioconductor `airway` experiment package. The dataset contains RNA-seq read counts from human airway smooth muscle cell lines treated with dexamethasone and matched untreated controls.
+This project uses the Bioconductor `airway` experiment package. The dataset contains RNA-seq read counts from human airway smooth muscle cell lines treated with dexamethasone and matched untreated controls.
 
 Primary analysis contrast:
 
@@ -68,7 +87,12 @@ PDF versions of the plots are also written for publication workflows.
   - CRAN: `ggplot2`, `ggrepel`, `pheatmap`, `dplyr`, `readr`, `tibble`, `RColorBrewer`
   - Bioconductor: `DESeq2`, `airway`, `SummarizedExperiment`, `AnnotationDbi`, `org.Hs.eg.db`, `apeglm`
 
-The setup script installs missing packages automatically.
+The setup script installs missing packages automatically. To use conda instead:
+
+```bash
+conda env create -f environment.yml
+conda activate rna-seq-workflow
+```
 
 On Windows, see `INSTALL_WINDOWS.md` if `Rscript` is not found.
 
@@ -111,3 +135,4 @@ padj < 0.05 and abs(log2FoldChange) >= 1
 - DESeq2 expects raw count data and performs its own normalization through size factors.
 - PCA and heatmaps use variance-stabilized expression values because RNA-seq count variance depends on the mean.
 - The airway dataset is a compact public example suitable for proving the workflow, not a substitute for project-specific experimental design review.
+- This repository is for research support and does not provide clinical diagnosis, treatment decisions, or patient-specific interpretation.
